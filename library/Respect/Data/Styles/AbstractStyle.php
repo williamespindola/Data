@@ -14,7 +14,7 @@ abstract class AbstractStyle implements Stylable
     {
         $separator = preg_quote($separator, '/');
         return preg_replace_callback(
-            "/({$separator})([a-zA-Z])/e",
+            "/({$separator})([a-zA-Z])/",
             create_function('$m', 'return strtoupper("$m[2]");'),
             $name
         );
